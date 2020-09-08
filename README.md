@@ -1,6 +1,6 @@
 # dog-finder
 
-Empty project.
+A simple app that helps you to find a perfect dog breed to match your personality
 
 ## Building and running on localhost
 
