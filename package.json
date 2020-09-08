@@ -9,12 +9,14 @@
   "scripts": {
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode development --watch",
-    "build-prod": "webpack -p --mode production"
+    "build-prod": "webpack -p --mode production",
+    "start": "nodemon src/server/index.js"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "axios": "^0.20.0",
+    "express": "^4.17.1",
     "fontsource-roboto": "^3.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
