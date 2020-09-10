@@ -10,7 +10,8 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack -d --mode development --watch",
     "build-prod": "webpack -p --mode production",
-    "start": "node src/server/index.js"
+    "start": "node src/server/index.js",
+    "heroku-postbuild": "cd dist && npm install && npm run build"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
