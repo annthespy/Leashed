@@ -1,10 +1,13 @@
-
 .cache/
 coverage/
 dist/*
 !dist/index.html
 node_modules/
 *.log
+bundle.js
+bower_components
+package-lock.json
+config.js
 
 # OS generated files
 .DS_Store

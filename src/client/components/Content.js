@@ -3,7 +3,7 @@ import Quote from "./Quote.js";
 import Navbar from "./Navbar.js";
 import Search from "./Search.js";
 import quotes from "../quotes.js";
-import axios from "axios";
+import apiHelpers from "../../server/apiHelpers.js";
 
 class Content extends React.Component {
   constructor(props) {
@@ -11,9 +11,15 @@ class Content extends React.Component {
     this.state = {
       currentQuote: quotes[0],
       view: "quote",
+      dogs: [],
     };
     this.handleQuoteChange = this.handleQuoteChange.bind(this);
     this.handleViewChange = this.handleViewChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  componentDidMount() {
+    this.getDogs();
   }
 
   handleQuoteChange() {
@@ -29,13 +35,43 @@ class Content extends React.Component {
     });
   }
 
+  handleSearch(str) {
+    this.getSearchedBreed(str);
+  }
+
   renderView() {
     const { view } = this.state;
     if (view === "quote") {
       return <Quote currentQuote={this.state.currentQuote} />;
     } else if (view === "search") {
-      return <Search />;
+      return <Search dogs={this.state.dogs} handleSearch={this.handleSearch} />;
     }
+  }
+
+  getDogs() {
+    apiHelpers
+      .getBreeds()
+      .then(({ data }) => {
+        this.setState({
+          dogs: data,
+        });
+      })
+      .catch((err) => {
+        console.log("error getting dog breeds", err);
+      });
+  }
+
+  getSearchedBreed(str) {
+    apiHelpers
+      .searchBreeds(str)
+      .then(({ data }) => {
+        this.setState({
+          dogs: data,
+        });
+      })
+      .catch((err) => {
+        console.log("error getting dog breeds", err);
+      });
   }
 
   render() {
