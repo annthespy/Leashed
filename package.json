@@ -11,7 +11,7 @@
     "build-dev": "webpack -d --mode development --watch",
     "build-prod": "webpack -p --mode production",
     "start": "node src/server/index.js",
-    "heroku-postbuild": "cd dist && npm install && npm run build"
+    "heroku-postbuild": "webpack -p"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
