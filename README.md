@@ -2,7 +2,7 @@
 
 Easily find the best dog breeds for your family based on your preferred breed size, weight, friendliness, talents, intelligence, trainability and more.
 
-![](Leashed.png)
+![](Leashed.gif)
 
 ## Tech Stack
 
