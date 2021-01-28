@@ -1,6 +1,14 @@
-# dog-finder
+# Leashed
 
-A simple app that helps you to find a perfect dog breed to match your personality
+Easily find the best dog breeds for your family based on your preferred breed size, weight, friendliness, talents, intelligence, trainability and more.
+
+![](Leashed.png)
+
+## Tech Stack
+
+- [React](https://reactjs.org/)
+- [Node](https://nodejs.org/en/)
+- [Express.js](https://expressjs.com/)
 
 ## Building and running on localhost
 
@@ -25,7 +33,3 @@ npm run build-dev
 ## Running
 
 Open the file `dist/index.html` in your browser
-
-## Credits
-
-Made with [createapp.dev](https://createapp.dev/)
